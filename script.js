@@ -12,6 +12,15 @@ function resetTimer(){
     document.getElementById('startStop').innerHTML = 'Start';
 }
 
+function formatTime(){
+    if(seconds<10){
+        seconds = '0' + seconds;
+    }
+    if(minutes<10){
+        minutes = '0' + parseInt(minutes);
+    }
+}
+
 function timerRun(){
     seconds++;
     if(seconds==60){
@@ -19,6 +28,7 @@ function timerRun(){
         minutes++;
     }
 
+    formatTime();
     document.getElementById('moj_div').innerHTML =  minutes + " : " + seconds;
 
     // setTimeout("timerRun()", 1000);
