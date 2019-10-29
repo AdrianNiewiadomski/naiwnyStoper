@@ -6,6 +6,8 @@ function timerRun(){
     seconds++;
 
     document.getElementById('moj_div').innerHTML =   "00 : " + seconds;
+
+    setTimeout("timerRun()", 1000);
 }
 
 function toggleTimer(){
