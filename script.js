@@ -3,6 +3,14 @@ var timerIsOn = false;
 var timer = 0;
 var seconds = 0;
 
+function resetTimer(){
+    timerIsOn = false;
+    clearTimeout(timer);
+    seconds = 0;
+    document.getElementById('moj_div').innerHTML = '00 : 00';
+    document.getElementById('startStop').innerHTML = 'Start';
+}
+
 function timerRun(){
     seconds++;
 
