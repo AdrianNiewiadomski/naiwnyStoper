@@ -1,5 +1,6 @@
 // alert("dzialam");
 var timerIsOn = false;
+var timer = 0;
 var seconds = 0;
 
 function timerRun(){
@@ -7,7 +8,8 @@ function timerRun(){
 
     document.getElementById('moj_div').innerHTML =   "00 : " + seconds;
 
-    setTimeout("timerRun()", 1000);
+    // setTimeout("timerRun()", 1000);
+    timer = setTimeout("timerRun()", 1000);
 }
 
 function toggleTimer(){
@@ -18,5 +20,6 @@ function toggleTimer(){
         setTimeout('timerRun()', 1000);
     } else {
         document.getElementById('startStop').innerHTML = 'Start';
+        clearTimeout(timer);
     }
 }
